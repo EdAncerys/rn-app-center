@@ -1,16 +1,18 @@
-# MyApp
+# React Native Test App
+
+[Getting Started with MS CLI](https://docs.microsoft.com/en-us/appcenter/cli/)
+
+[Get Started with iOS](https://docs.microsoft.com/en-us/appcenter/sdk/getting-started/ios)
 
 ### React Native app build to deploy to App Center
 
 ### How to run it:
 
-`* .env need to be added with appropriate variables`
-
 - Clone this repository:
-  [Wünder App](https://github.com/Skylark-Creative/wunder-app)
+  [rn-app-center](https://github.com/EdAncerys/rn-app-center)
 - Navigate to the app:
 
-  `$ cd wunder-app`
+  `$ cd rn-app-center`
 
 - Install all dependencies & packages:
 
