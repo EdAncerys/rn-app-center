@@ -1,4 +1,12 @@
 {
   "name": "MyApp",
-  "displayName": "MyApp"
+  "displayName": "my-app",
+  "privacy": "public",
+  "platforms": ["ios"],
+  "version": "0.0.1",
+  "orientation": "portrait",
+  "updates": {
+    "fallbackToCachedTimeout": 0
+  },
+  "assetBundlePatterns": ["**/*"]
 }
