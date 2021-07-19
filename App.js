@@ -27,9 +27,13 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    paddingVertical: '10%',
+    paddingTop: '10%',
     color: '#222222',
     fontSize: 36,
+  },
+  version: {
+    fontSize: 12,
+    fontWeight: '700',
   },
 });
 
@@ -45,6 +49,9 @@ const App = ({props}) => {
         </View>
         <View>
           <Text style={styles.title}>Hello Skylark!</Text>
+        </View>
+        <View>
+          <Text style={{...styles.title, ...styles.version}}>V0.0.2</Text>
         </View>
       </SafeAreaView>
     </View>
