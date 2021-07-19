@@ -47,11 +47,22 @@ const App = ({props}) => {
             source={Background}
             style={styles.backgroundImg}></ImageBackground>
         </View>
-        <View>
-          <Text style={styles.title}>Hello Skylark!</Text>
-        </View>
-        <View>
-          <Text style={{...styles.title, ...styles.version}}>V0.0.2</Text>
+        <View
+          style={{
+            height: height - height / 3,
+          }}>
+          <View
+            style={{
+              flex: 3,
+            }}>
+            <Text style={styles.title}>Hello Skylark!</Text>
+          </View>
+          <View
+            style={{
+              flex: 1,
+            }}>
+            <Text style={{...styles.title, ...styles.version}}>V0.0.2</Text>
+          </View>
         </View>
       </SafeAreaView>
     </View>
