@@ -1,6 +1,6 @@
 {
   "name": "MyApp",
-  "displayName": "my-app",
+  "displayName": "rn-app-center",
   "privacy": "public",
   "platforms": ["ios"],
   "version": "0.0.1",

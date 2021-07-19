@@ -78,4 +78,6 @@ Add these lines to the didFinishLaunchingWithOptions method
 
 Now build and launch your app, then go to the Analytics section. You should see one active user and at least one session! The charts will get more relevant as you get more users. Once your app actually crashes, you will have Crashes data show up as well.
 
-### [Signing off App via Xcode](https://stackoverflow.com/questions/31039513/how-can-i-skip-code-signing-for-development-builds-in-xcode)
+### [App store connect](https://appstoreconnect.apple.com)
+
+### [Apple dev](https://developer.apple.com)
