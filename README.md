@@ -32,7 +32,9 @@
 
 - Running app on Android emulator. While in app root directory:
 
-  `yarn android`
+  `yarn android` or
+
+  `npx react-native run-android`
 
 # Seting up App Center’s SDK for the app.
 
