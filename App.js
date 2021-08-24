@@ -5,6 +5,8 @@ import {
   StyleSheet,
   SafeAreaView,
   ImageBackground,
+  Button,
+  Pressable,
   StatusBar,
   Dimensions,
 } from 'react-native';
@@ -35,9 +37,32 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '700',
   },
+  btn: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 40,
+    width: 80,
+    height: 80,
+    backgroundColor: '#2196F3',
+    margin: 10,
+  },
+  btnText: {
+    fontSize: 24,
+    fontWeight: '800',
+  },
 });
 
-const App = ({props}) => {
+const App = ({}) => {
+  const [count, setCount] = React.useState(0);
+
+  const handleCountAdd = () => {
+    setCount(count + 1);
+  };
+
+  const handleCountSubtract = () => {
+    setCount(count - 1);
+  };
+
   return (
     <View style={styles.container}>
       <SafeAreaView>
@@ -56,6 +81,24 @@ const App = ({props}) => {
               flex: 3,
             }}>
             <Text style={styles.title}>Hello Skylark!</Text>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Text style={styles.title}>{count}</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                }}>
+                <Pressable style={styles.btn} onPress={handleCountAdd}>
+                  <Text style={styles.btnText}>+</Text>
+                </Pressable>
+                <Pressable style={styles.btn} onPress={handleCountSubtract}>
+                  <Text style={styles.btnText}>-</Text>
+                </Pressable>
+              </View>
+            </View>
           </View>
           <View
             style={{

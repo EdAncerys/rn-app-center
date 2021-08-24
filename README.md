@@ -30,6 +30,10 @@
 
   `$ open WunderApp.xcworkspace`
 
+- Running app on Android emulator. While in app root directory:
+
+  `yarn android`
+
 # Seting up App Center’s SDK for the app.
 
 ### Add the SDK to the project
