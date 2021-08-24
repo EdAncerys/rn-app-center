@@ -33,6 +33,12 @@ const styles = StyleSheet.create({
     color: '#222222',
     fontSize: 36,
   },
+  subTitle: {
+    textAlign: 'center',
+    marginVertical: 20,
+    color: '#dc3545',
+    fontSize: 12,
+  },
   version: {
     fontSize: 12,
     fontWeight: '700',
@@ -40,11 +46,11 @@ const styles = StyleSheet.create({
   btn: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 40,
+    // borderRadius: 40,
     width: 80,
-    height: 80,
-    backgroundColor: '#2196F3',
-    margin: 10,
+    height: 60,
+    backgroundColor: '#20c997',
+    margin: 20,
   },
   btnText: {
     fontSize: 24,
@@ -81,12 +87,13 @@ const App = ({}) => {
               flex: 3,
             }}>
             <Text style={styles.title}>Hello Skylark!</Text>
+            <Text style={styles.subTitle}>👾 Release Date: 24/08/2021</Text>
             <View
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={styles.title}>{count}</Text>
+              <Text style={styles.title}>Count: {count}</Text>
               <View
                 style={{
                   flexDirection: 'row',
