@@ -36,54 +36,54 @@
 
   `npx react-native run-android`
 
-# Seting up App Center’s SDK for the app.
+## Add App Center’s SDK to your app.
 
-### Add the SDK to the project
-
-In a terminal window opened at the root of a React Native project, enter the following line to add Crash and Analytics services to your app
-
-`npm install appcenter appcenter-analytics appcenter-crashes --save-exactnpm install appcenter appcenter-analytics appcenter-crashes --save-exact`
-
-### Integrate the SDK
-
-Run `pod install` from iOS directory to install CocoaPods dependencies.Note: Integrating the iOS SDK requires CocoaPods. If you want to integrate manually, follow these steps.Create a new file with the name AppCenter-Config.plist with the following content. Don't forget to add this file to the Xcode project (right-click the app in Xcode and click Add files to <App Name>...).<?xml version="1.0" encoding="UTF-8"?>
+- Add the SDK to the project
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-    <dict>
-    <key>AppSecret</key>
-    <string>5ce0e43a-271d-4a3f-821e-44eb5057ca26</string>
-    </dict>
-</plist>
+npm install appcenter appcenter-analytics appcenter-crashes --save-exact
 ```
 
-Modify the app's AppDelegate.m file to include code for starting SDK:Add these lines to import section above the `#if DEBUG` or `#ifdef`
+- Integrate the SDK
+
+Create a new file with the filename appcenter-config.json in android/app/src/main/assets/ with the following content:
 
 ```
-FB_SONARKIT_ENABLED declaration (if present):#import <AppCenterReactNative.h>
+{
+  "app_secret": "c1b9ce93-6173-4608-8450-62986eae4b03"
+}
 ```
 
-```
-- #import <AppCenterReactNativeAnalytics.h>
-- #import <AppCenterReactNativeCrashes.h>#import <AppCenterReactNative.h>
-- #import <AppCenterReactNativeAnalytics.h>
-- #import <AppCenterReactNativeCrashes.h>
-```
-
-Add these lines to the didFinishLaunchingWithOptions method
+Modify the app's res/values/strings.xml to include the following lines:
 
 ```
-[AppCenterReactNative register];
-[AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
-[AppCenterReactNativeCrashes registerWithAutomaticProcessing];
+<string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+<string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
 ```
 
-### Explore data
+- Explore data. Done!
 
-Now build and launch your app, then go to the Analytics section. You should see one active user and at least one session! The charts will get more relevant as you get more users. Once your app actually crashes, you will have Crashes data show up as well.
+## Sign your app for release to Google Play
 
-### [App store connect](https://appstoreconnect.apple.com)
+`https://developer.android.com/studio/publish/app-signing`
 
-### [Apple dev](https://developer.apple.com)
+### Generate an upload key and keystore
+
+- In the menu bar, click Build > Generate Signed Bundle/APK.
+- In the Generate Signed Bundle or APK dialog, select Android App Bundle or APK and click Next.
+- Below the field for Key store path, click Create new.
+- On the New Key Store window, provide the following information for your keystore and key
+
+### Adding unique identifier to App Manifest file
+
+```
+AndroidManifest.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapp" // unique identifier
+    android:versionCode="1"
+    android:versionName="1.0" >
+    ...
+</manifest>
+```
